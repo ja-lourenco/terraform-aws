@@ -1,6 +1,6 @@
 locals {
   # Removes the 'https://' from the beginning of oidc url
-  oidc_url_formatted = replace(var.oidc_url, "https://", "")
+  oidc_url_formatted = replace(local.oidc_url, "https://", "")
 }
 
 resource "aws_iam_role" "eks_vpc_cni_role" {
@@ -12,7 +12,7 @@ resource "aws_iam_role" "eks_vpc_cni_role" {
       {
         Effect : "Allow",
         Principal : {
-          Federated : var.oidc_arn
+          Federated : local.oidc_arn
         },
         Action : "sts:AssumeRoleWithWebIdentity",
         Condition : {

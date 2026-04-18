@@ -1,7 +1,3 @@
-output "eks_oidc_url" {
-  value = module.eks_cluster.oidc_url
-}
-
-output "eks_oidc_arn" {
-  value = module.eks_cluster.oidc_arn
+output "eks_cluster_name" {
+  value = module.eks_cluster.cluster_name
 }

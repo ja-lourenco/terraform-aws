@@ -14,9 +14,9 @@ module "eks_cluster" {
 }
 
 module "managed-node-group" {
-  source       = "./modules/managed-node-group"
-  project_name = var.project_name
-  oidc_url     = module.eks_cluster.oidc_url
-  oidc_arn     = module.eks_cluster.oidc_arn
-  tags         = local.tags
+  source            = "./modules/managed-node-group"
+  project_name      = var.project_name
+  subnet_private_1a = module.eks_network.subnet_priv_1a
+  subnet_private_1b = module.eks_network.subnet_priv_1b
+  tags              = local.tags
 }

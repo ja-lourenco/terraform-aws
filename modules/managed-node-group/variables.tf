@@ -8,12 +8,12 @@ variable "tags" {
   description = "Tags to be added to AWS resources"
 }
 
-variable "oidc_url" {
+variable "subnet_private_1a" {
   type        = string
-  description = "OIDC URL from EKS Cluster"
+  description = "Subnet ID from AZ 1a"
 }
 
-variable "oidc_arn" {
+variable "subnet_private_1b" {
   type        = string
-  description = "OIDC ARN from EKS Cluster"
+  description = "Subnet ID from AZ 1b"
 }

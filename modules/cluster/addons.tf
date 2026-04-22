@@ -7,6 +7,8 @@ resource "aws_eks_addon" "eks_vpc_cni" {
   resolve_conflicts_on_create = "OVERWRITE"
   resolve_conflicts_on_update = "PRESERVE"
 
+  tags = var.tags
+
   depends_on = [
     aws_eks_cluster.eks_cluster
   ]

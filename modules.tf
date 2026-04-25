@@ -25,7 +25,10 @@ module "eks_managed_node_group" {
 module "eks_aws_load_balance_controller" {
   source       = "./modules/aws-load-balancer-controller"
   project_name = var.project_name
+  cluster_name = module.eks_cluster.cluster_name
   oidc_url     = module.eks_cluster.oidc_url
   oidc_arn     = module.eks_cluster.oidc_arn
+  vpc_id       = module.eks_network.vpc_id
+  aws_region   = local.region
   tags         = local.tags
 }

@@ -1,3 +1,7 @@
+output "vpc_id" {
+  value = aws_vpc.eks_vpc.id
+}
+
 output "subnet_pub_1a" {
   value = aws_subnet.eks_subnet_public_1a.id
 }

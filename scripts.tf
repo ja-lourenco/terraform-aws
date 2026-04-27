@@ -9,7 +9,7 @@ resource "terraform_data" "update-eks-context" {
 
     environment = {
       CLUSTER_NAME = "${var.project_name}-cluster"
-      REGION       = local.region
+      REGION       = var.aws_region
     }
   }
 }

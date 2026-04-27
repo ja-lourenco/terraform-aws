@@ -4,7 +4,7 @@ resource "terraform_data" "update-eks-context" {
   triggers_replace = timestamp()
 
   provisioner "local-exec" {
-    command     = "${path.root}/scripts/update-eks-context.sh"
+    command     = "${path.module}/scripts/update-eks-context.sh"
     interpreter = ["/bin/bash", "-c"]
 
     environment = {
